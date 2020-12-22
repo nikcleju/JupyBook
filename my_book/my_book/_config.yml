@@ -9,3 +9,4 @@ title                       : my-book  # The title of the book. Will be placed i
 author                      : Nic  # The author of the book
 copyright                   : "2020"  # Copyright year to be placed in the footer
 logo                        : logo.png  # A path to the book logo
+
