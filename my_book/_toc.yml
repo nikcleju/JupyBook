@@ -1,0 +1,10 @@
+file: CONDUCT
+sections:
+- file: CONTRIBUTING
+- file: README
+- file: my_book/content
+  sections:
+  - file: my_book/intro
+  - file: my_book/markdown
+  - file: my_book/notebooks
+  - file: my_book/Untitled
