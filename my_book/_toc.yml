@@ -1,10 +1,7 @@
-file: CONDUCT
-sections:
-- file: CONTRIBUTING
-- file: README
-- file: my_book/content
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+- file: intro
+- file: content
   sections:
-  - file: my_book/intro
-  - file: my_book/markdown
-  - file: my_book/notebooks
-  - file: my_book/Untitled
+    - file: markdown
+    - file: notebooks
