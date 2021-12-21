@@ -3,3 +3,4 @@ root: content/intro
 chapters:
 - file: content/TheNormalDistribution
 - file: content/Untitled
+- file: content/2021-12-20-BayesRuleExampleCovid
