@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Bayes rule and vaccination benefit &#8212; my-book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="The Gaussian function" href="Untitled.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">my-book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to Nic’s Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="TheNormalDistribution.html">
+   The Normal distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Untitled.html">
+   The Gaussian function
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   The Bayes rule and vaccination benefit
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/2021-12-20-BayesRuleExampleCovid.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-bayes-rule">
+   The Bayes rule
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-data-from-the-news">
+   Some data from the news
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intuition">
+   Intuition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-definition">
+   Problem definition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-the-bayes-rule">
+   Using the Bayes rule
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-about-the-death-rate">
+   How about the death rate?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#in-retrospect">
+   In retrospect
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="the-bayes-rule-and-vaccination-benefit">
+<h1>The Bayes rule and vaccination benefit<a class="headerlink" href="#the-bayes-rule-and-vaccination-benefit" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-bayes-rule">
+<h2>The Bayes rule<a class="headerlink" href="#the-bayes-rule" title="Permalink to this headline">¶</a></h2>
+<p>The Bayes rule is a fundamental formula in statistics which allows to invert the order of conditional probabilities.</p>
+<p>It can be written as follows:</p>
+<div class="math notranslate nohighlight">
+\[P(B|A) = \frac{P(A|B) \cdot P(B)}{P(A)}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This comes from the expansion of an intersection:</p>
+<div class="math notranslate nohighlight">
+\[P(A \cap B) = P(A|B) \cdot P(B) = P(B|A) \cdot P(A)\]</div>
+<p>“To have both A and B, first obtain one of them, then the second one given that you have the first”</p>
+</div>
+<p>We express <span class="math notranslate nohighlight">\(P(B|A)\)</span> in terms of <span class="math notranslate nohighlight">\(P(A|B)\)</span>, i.e. the conditional terms are in opposite order.
+This is the hallmark of the Bayes rule.
+We’ll see below a nice example of using this in real life.</p>
+</div>
+<div class="section" id="some-data-from-the-news">
+<h2>Some data from the news<a class="headerlink" href="#some-data-from-the-news" title="Permalink to this headline">¶</a></h2>
+<p>Suppose you browse the news and stumble upon the following data:</p>
+<p><img alt="Some Covid stats from a news headline" src="../_images/BayesRuleVax_CovidStats_resized.png" /></p>
+<p>The rates of infection and death seem much higher for non-vaccinated people:</p>
+<ul class="simple">
+<li><p>Infections: 72.3% non-vaccinated vs 27.3% vaccinated</p></li>
+<li><p>Deaths: 92.1 % non-vaccinated vs just 7.9% vaccinated</p></li>
+</ul>
+<p>Is it really the case? Are these ratios really accurate?</p>
+<p><em><strong>Note</strong>: This post is not about vaccination.
+It is about using the Bayes rule to make sense of some percentage values reported in mass-media.
+Please don’t consider it either pro or anti vaccination.</em></p>
+</div>
+<div class="section" id="intuition">
+<h2>Intuition<a class="headerlink" href="#intuition" title="Permalink to this headline">¶</a></h2>
+<p>These numbers don’t tell the whole story. We may have an intuition about this if we ask the following question:</p>
+<p><em>“Is the ratio 72.3% vs 27.3% a lot?”</em></p>
+<p>(i.e. the ratio of non-vaccinated to vaccinated people in newly infected).</p>
+<p>It actually depends on the vaccination percent of the <strong>general population</strong>:</p>
+<ul class="simple">
+<li><p>If the general population is also 72.3% not vaccinated and 27.7% vaccinated,
+then the share of vaccinated in new infections is the same as the share of vaccinated in general,
+which means than vaccination neither helps nor hinders.</p></li>
+<li><p>If the general vaccination rate is higher than the 27.7%,
+then we have a smaller slice of vaccinated people in new infections compared to the general population.
+This means vaccination provides a benefit.</p></li>
+<li><p>If the general vaccination rate is smaller than 27.7%,
+then we have a larger slice of vaccinated people in new infections compared to the general population.
+This means vaccination is detrimental.</p></li>
+</ul>
+<p>![Some Covid stats from a news headline(images/BayesRuleVax_IsFourALot.jpg “Context matters”)</p>
+<p>So, we must consider the vaccination percentage in the whole population as well. Let’s see how the Bayes rule comes to the rescue here.</p>
+</div>
+<div class="section" id="problem-definition">
+<h2>Problem definition<a class="headerlink" href="#problem-definition" title="Permalink to this headline">¶</a></h2>
+<p>What is the proper name of the probability whose value is 72.3%?</p>
+<p>This is the number of non-vaccinated people in every 100 new infection cases. Therefore, it is a conditional probability,
+whose name is “probability of being non-vaccinated given that you are infected”, <span class="math notranslate nohighlight">\(P(\textrm{non-vaccinated | infected})\)</span>.</p>
+<p>Similarly, 27.7% is the conditional probability of being vaccinated if you are infected.</p>
+<p>In the fashion of Bayes rule, we write them as:</p>
+<div class="math notranslate nohighlight">
+\[P(NV | I) = 72.3\%\]</div>
+<div class="math notranslate nohighlight">
+\[P(V | I) = 27.7\%\]</div>
+<p>“NV” means “non-vaccinated”, “V” means “vaccinated”, and “I” means infected.</p>
+<p>It is important to recognize these as <strong>conditional probabilities</strong>. They are conditional because they are computed for every 100 new infections,
+i.e. restricted only to these cases.</p>
+<p>Now, the question we really want to know is the following:</p>
+<p><em>“How much does vaccination help in reducing the probability of infections?”</em></p>
+<p>This means the ratio of infected-if-vaccinated to infected-if-non-vaccinated:</p>
+<div class="math notranslate nohighlight">
+\[\frac{P(I | V)}{P(I | NV)} = ?\]</div>
+<p>Note the change in notation: we want <code class="docutils literal notranslate"><span class="pre">I|V</span></code> and <code class="docutils literal notranslate"><span class="pre">I|NV</span></code>, but what we have is actually the opposite, <code class="docutils literal notranslate"><span class="pre">NV|I</span></code> and <code class="docutils literal notranslate"><span class="pre">V|I</span></code>. This is exactly where the Bayes rule helps us.</p>
+</div>
+<div class="section" id="using-the-bayes-rule">
+<h2>Using the Bayes rule<a class="headerlink" href="#using-the-bayes-rule" title="Permalink to this headline">¶</a></h2>
+<p>Let’s apply the Bayes rule to compute <span class="math notranslate nohighlight">\(P(I | V)\)</span> and <span class="math notranslate nohighlight">\(P(I | NV)\)</span>.</p>
+<p>We have:</p>
+<div class="math notranslate nohighlight">
+\[P(I|V) = \frac{P(V|I) \cdot P(I)}{P(V)}\]</div>
+<div class="math notranslate nohighlight">
+\[P(I|NV) = \frac{P(NV|I) \cdot P(I)}{P(NV)}\]</div>
+<p>We want their ratio, and when dividing them the common term <span class="math notranslate nohighlight">\(P(I)\)</span> simplifies away:</p>
+<div class="math notranslate nohighlight">
+\[\frac{P(I | V)}{P(I | NV)} = \frac{P(V|I) \cdot P(I)}{P(V)} \cdot \frac{P(NV)}{P(NV|I) \cdot P(I)} = \frac{P(V|I)}{P(NV|I)} \cdot \frac{P(NV)}{P(V)}\]</div>
+<p>The first term <span class="math notranslate nohighlight">\(\frac{P(V | I)}{P(NV | I)}\)</span> comes from our initial data and is equal to <span class="math notranslate nohighlight">\(\frac{27.7\%}{72.3\%}\)</span>. In the second term, <span class="math notranslate nohighlight">\(P(V)\)</span> and <span class="math notranslate nohighlight">\(P(NV)\)</span> are the general vaccination and non-vaccination rate in the general population. The Bayes rule shows that we must consider them as well.</p>
+<p>A quick search shows us that the vaccination rate around 17th October 2021 was around <span class="math notranslate nohighlight">\(P(V) = 29.4\%\)</span>, which means <span class="math notranslate nohighlight">\(P(NV) = 70.6\%\)</span>:</p>
+<p><img alt="Vaccination status in Romania around 17th October 2021" src="content/images/2021-12-20-VaccinationStats.png" /></p>
+<p>We can now evaluate our result:</p>
+<div class="math notranslate nohighlight">
+\[\frac{P(I | V)}{P(I | NV)} = \frac{P(V|I)}{P(NV|I)} \cdot \frac{P(NV)}{P(V)} = \frac{27.7\%}{72.3\%} \cdot \frac{70.6\%}{29.4\%} = 0.920\]</div>
+<p>The numbers show that vaccination reduces the risk of infection by a merely 8%, which is not much. This is much different than what you might have expected from reading the initial percentages (Infections: 72.3% non-vaccinated, 27.7% vaccinated)</p>
+</div>
+<div class="section" id="how-about-the-death-rate">
+<h2>How about the death rate?<a class="headerlink" href="#how-about-the-death-rate" title="Permalink to this headline">¶</a></h2>
+<p>Let’s redo the computations for the death rate. We replace <code class="docutils literal notranslate"><span class="pre">I</span></code> with <code class="docutils literal notranslate"><span class="pre">D</span></code> in the formulas (D stands for “Deceased”)</p>
+<div class="math notranslate nohighlight">
+\[\frac{P(D | V)}{P(D | NV)} = \frac{P(V|D)}{P(NV|D)} \cdot \frac{P(NV)}{P(V)} = \frac{7.9\%}{92.1\%} \cdot \frac{70.6\%}{29.4\%} = 0.205\]</div>
+<p>Vaccination reduces the risk of death by <strong>five times</strong> compared to non-vaccinated people. Great news and a major improvement. However, this may not be the actual ratio you expected from reading the original numbers (7.9% vs 92.1% means more than 10 times smaller, which is not the case).</p>
+</div>
+<div class="section" id="in-retrospect">
+<h2>In retrospect<a class="headerlink" href="#in-retrospect" title="Permalink to this headline">¶</a></h2>
+<p>In retrospect, what the Bayes rule does here is not really magic.
+We can rewrite our final result as the ratio of two ratios:</p>
+<div class="math notranslate nohighlight">
+\[\frac{P(D | V)}{P(D | NV)} = \frac{P(V|D)}{P(NV|D)} \cdot \frac{P(NV)}{P(V)} = \frac{\frac{P(V|D)}{P(NV|D)}} {\frac{P(V)}{P(NV)}}\]</div>
+<p>We have the ratio of <span class="math notranslate nohighlight">\(\frac{P(V | D)}{P(NV | D)}\)</span> to <span class="math notranslate nohighlight">\(\frac{P(V)}{P(NV)}\)</span>, i.e. the ratio of vaccinated-to-not-vaccinated among the deceased compared to the same vaccinated-to-not-vaccinated ratio in the general population. This makes sense, now that we see it, and we could have guessed something like this from the initial intuition. However, one can easily be fooled by statistical numbers. It is great that the Bayes rule leads us nicely and rigorously to this result.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Untitled.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">The Gaussian function</p>
+        </div>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Nic<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
