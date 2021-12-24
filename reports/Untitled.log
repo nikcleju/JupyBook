@@ -21,56 +21,60 @@ from ipywidgets import widgets
 import matplotlib.pyplot as plt 
 import math
 import numpy as np
+from scipy.stats import norm
 
 # Create the output widget
-out = widgets.Output(layout={'border': '1px solid black'})
+out2 = widgets.HTMLMath()
 
-@widgets.interact(mu=(-10, 10, 0.1), sigma2=(0.1, 50, 0.1), T=(-20, 20, 0.1))
-def plot_normal(mu=0, sigma2=1, T=0):
+@widgets.interact(mu0=(-10, 10, 0.1), mu1=(-10, 10, 0.1), sigma2=(0.1, 50, 0.1), r=(-20, 20, 0.1))
+def decision_with_one_sample(mu0=0, mu1=5, sigma2=1, r=0):
 
     limits = [-20, 20, 0, 0.5]
     sigma = math.sqrt(sigma2)
     x = np.linspace(limits[0], limits[1], 1000)
-    y = 1/(np.sqrt(sigma2*2*math.pi))*np.exp(-(x - mu)**2/(2*sigma2))
-    
-    fig, ax = plt.subplots(figsize=(6,4), dpi = 100)
-    
-    ax.plot(x, y)
-    ax.axis(limits)
+    w0 = norm(loc=mu0, scale=sigma)
+    w1 = norm(loc=mu1, scale=sigma)
+
    
-    plt.fill_between(x, y, where = (x > T))
-    area = 1 - 0.5*(1+math.erf((T-mu)/math.sqrt(sigma2*2)))
+    # Prepare figure
+    fig, ax = plt.subplots(figsize=(6,4), dpi = 100)
+    #ax.axis(limits)
     
-    # Mark \mu on the graph
+    # Plot density functions and centers
+    ax.plot(x, w0.pdf(x))
+    ax.plot(x, w1.pdf(x))
+    #ax.plot(mu1, 0, 'o')
+    #ax.plot(mu2, 0, 'o')
     
-    ax.plot(mu, 0, 'o')
-#     ax.annotate('\mu', 
-#                 xy=(mu, 0), 
-#                 xytext=(mu, -1),
-#                 textcoords='axes fraction',
-#                 arrowprops=dict(facecolor='black', shrink=0.05),
-#                 )
-    
+    # Plot sample and vertical lines
+    eps = 0.1
+    ax.vlines(r-eps, 0, w0.pdf(r-eps), colors='b')
+    ax.vlines(r+eps, 0, w1.pdf(r+eps), colors='r')
+    ax.plot(r, 0, 'o')
+       
     plt.show()
 
+    # Display decision
     with out:
-        print('Output:\n   Probability = {}'.format(area))
-
-    out.clear_output(wait=True)
+        print(r'$$\frac{1}{2}Output:\n   Probability $$')
+        
+    lr = w1.pdf(r) / w0.pdf(r)
+    text = r"Likelihood ratio: $$\frac{{w(r|H_1)}}{{w(r|H_0)}} = \frac{{ {:.2f} }}{{ {:.2f} }} = {:.2f} \Rightarrow$$ Decision $$D_{}$$".format(w1.pdf(r), w0.pdf(r), lr, 1 if lr >= 1 else 0)
+    out2.value = text
 
 # Display the outout widget
-out
+out2
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1676/1042649453.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [0;32mfrom[0m [0mipywidgets[0m [0;32mimport[0m [0mwidgets[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 2[0;31m [0;32mimport[0m [0mmatplotlib[0m[0;34m.[0m[0mpyplot[0m [0;32mas[0m [0mplt[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      3[0m [0;32mimport[0m [0mmath[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/tmp/ipykernel_1618/928050795.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      3[0m [0;32mimport[0m [0mmath[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      4[0m [0;32mimport[0m [0mnumpy[0m [0;32mas[0m [0mnp[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m [0;34m[0m[0m
+[0;32m----> 5[0;31m [0;32mfrom[0m [0mscipy[0m[0;34m.[0m[0mstats[0m [0;32mimport[0m [0mnorm[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      6[0m [0;34m[0m[0m
+[1;32m      7[0m [0;31m# Create the output widget[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mModuleNotFoundError[0m: No module named 'matplotlib'
-ModuleNotFoundError: No module named 'matplotlib'
+[0;31mModuleNotFoundError[0m: No module named 'scipy'
+ModuleNotFoundError: No module named 'scipy'
 
