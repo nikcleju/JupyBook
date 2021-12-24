@@ -28,6 +28,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
+        pip install git+https://github.com/nikcleju/sphinx-thebe.git
 
     # Build the book
     - name: Build the book
