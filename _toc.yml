@@ -1,6 +1,12 @@
 format: jb-book
 root: content/intro
-chapters:
-- file: content/TheNormalDistribution
-- file: content/Untitled
-- file: content/2021-12-20-BayesRuleExampleCovid
+parts:
+  - caption: Digital Signal Processing
+    chapters:
+    - file: content/DSP/NonExistentFile
+
+  - caption: Decision and Estimation
+    chapters:
+    - file: content/DEDP/TheNormalDistribution
+    - file: content/DEDP/Untitled
+    - file: content/DEDP/2021-12-20-BayesRuleExampleCovid
