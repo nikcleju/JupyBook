@@ -1,6 +1,11 @@
 format: jb-book
 root: content/intro
 parts:
+
+  - caption: Information Theory
+    chapters:
+    - file: content/IT/InformationSources
+
   - caption: Digital Signal Processing
     chapters:
     - file: content/DSP/NonExistentFile
