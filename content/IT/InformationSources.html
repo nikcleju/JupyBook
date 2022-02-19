@@ -1,0 +1,1478 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discrete Information Sources &#8212; my-book</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.8.2/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">my-book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to my book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Decision and Estimation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DEDP/TheNormalDistribution.html">
+   The Normal distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DEDP/Untitled.html">
+   The Gaussian function
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DEDP/2021-12-20-BayesRuleExampleCovid.html">
+   The Bayes rule and vaccination benefit
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/IT/InformationSources.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nikcleju/JupyBook/main?urlpath=tree/content/IT/InformationSources.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-mathematical-definition-of-information">
+   A mathematical definition of information
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-information">
+     What is information?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#information-and-events">
+       Information and events
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#definition-of-information">
+       Definition of information
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-choice-of-logarithm">
+       The choice of logarithm
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#information-source">
+     Information Source
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sequence-of-messages">
+       Sequence of messages
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discrete-memoryless-source">
+     Discrete memoryless source
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sequence-of-messages-from-dms">
+       Sequence of messages from DMS
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entropy-of-a-dms">
+     Entropy of a DMS
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#interpretation-of-the-entropy">
+       Interpretation of the entropy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#properties-of-entropy">
+       Properties of entropy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-entropy-of-a-binary-source">
+       The entropy of a binary source
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#let-s-play-games">
+       Let’s play games
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#efficiency-redundancy-flow">
+       Efficiency, redundancy, flow
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#distance-between-distributions">
+       Distance between distributions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-kullback-leibler-distance">
+     Properties of Kullback-Leibler distance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extended-dms">
+     Extended DMS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extended-dms-example">
+     Extended DMS - Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extended-dms-another-example">
+     Extended DMS - Another example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#property-of-dms">
+     Property of DMS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-example-memoryless-is-not-enough">
+     An example [memoryless is not enough]
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sources-with-memory">
+     Sources with memory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transitions">
+     Transitions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transition-matrix">
+     Transition matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graphical-representation">
+     Graphical representation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entropy-of-sources-with-memory">
+     Entropy of sources with memory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ergodic-sources">
+     Ergodic sources
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Ergodic sources
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Ergodic sources
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ergodicity">
+     Ergodicity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-the-stationary-probabilties">
+     Finding the stationary probabilties
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entropy-of-ergodic-sources-with-memory">
+     Entropy of ergodic sources with memory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
+     Exercise
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-continued">
+     Exercise (continued)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-english-text-as-sources-with-memory">
+     Example English text as sources with memory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Example English text as sources with memory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-application">
+     Example application
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chapter-summary">
+     Chapter summary
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Discrete Information Sources</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-mathematical-definition-of-information">
+   A mathematical definition of information
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-information">
+     What is information?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#information-and-events">
+       Information and events
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#definition-of-information">
+       Definition of information
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-choice-of-logarithm">
+       The choice of logarithm
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#information-source">
+     Information Source
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sequence-of-messages">
+       Sequence of messages
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discrete-memoryless-source">
+     Discrete memoryless source
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sequence-of-messages-from-dms">
+       Sequence of messages from DMS
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entropy-of-a-dms">
+     Entropy of a DMS
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#interpretation-of-the-entropy">
+       Interpretation of the entropy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#properties-of-entropy">
+       Properties of entropy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-entropy-of-a-binary-source">
+       The entropy of a binary source
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#let-s-play-games">
+       Let’s play games
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#efficiency-redundancy-flow">
+       Efficiency, redundancy, flow
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#distance-between-distributions">
+       Distance between distributions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-kullback-leibler-distance">
+     Properties of Kullback-Leibler distance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extended-dms">
+     Extended DMS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extended-dms-example">
+     Extended DMS - Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extended-dms-another-example">
+     Extended DMS - Another example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#property-of-dms">
+     Property of DMS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-example-memoryless-is-not-enough">
+     An example [memoryless is not enough]
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sources-with-memory">
+     Sources with memory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transitions">
+     Transitions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transition-matrix">
+     Transition matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graphical-representation">
+     Graphical representation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entropy-of-sources-with-memory">
+     Entropy of sources with memory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ergodic-sources">
+     Ergodic sources
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Ergodic sources
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Ergodic sources
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ergodicity">
+     Ergodicity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-the-stationary-probabilties">
+     Finding the stationary probabilties
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entropy-of-ergodic-sources-with-memory">
+     Entropy of ergodic sources with memory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
+     Exercise
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-continued">
+     Exercise (continued)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-english-text-as-sources-with-memory">
+     Example English text as sources with memory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Example English text as sources with memory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-application">
+     Example application
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chapter-summary">
+     Chapter summary
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="math notranslate nohighlight">
+\[\begin{split}
+\newcommand{\snII}[5]{#1: \left( \begin{matrix} {#2} &amp; {#4} \\ #3 &amp; #5 \end{matrix} \right)}
+\newcommand{\snIV}[9]{#1: \left( \begin{matrix} {#2} &amp; {#4} &amp; {#6} &amp; {#8} \\ #3 &amp; #5 &amp; #7 &amp; #9 \end{matrix} \right)}
+\newcommand{\sII}[3] {#1: \left( \begin{matrix} s_1 &amp; s_2 \\ #2 &amp; #3 \end{matrix} \right)}
+\newcommand{\sIII}[4] {#1: \left( \begin{matrix} s_1 &amp; s_2 &amp; s_3 \\ #2 &amp; #3 &amp; #4 \end{matrix} \right)}
+\newcommand{\sIV}[5] {#1: \left( \begin{matrix} s_1 &amp; s_2 &amp; s_3 &amp; s_4 \\ #2 &amp; #3 &amp; #4  &amp; #5 \end{matrix} \right)}
+\newcommand{\sVI}[7] {#1: \left( \begin{matrix} s_1 &amp; s_2 &amp; s_3 &amp; s_4 &amp; s_5 &amp; s_6 \\ #2 &amp; #3 &amp; #4 &amp; #5 &amp; #6 &amp; #7\end{matrix} \right)}
+\newcommand{\sVIII}[9] {#1: \left( \begin{matrix} s_1 &amp; s_2 &amp; s_3 &amp; s_4 &amp; s_5 &amp; s_6 &amp; s_7 &amp; s_8\\ #2 &amp; #3 &amp; #4 &amp; #5 &amp; #6 &amp; #7 &amp; #8 &amp; #9 \end{matrix} \right)}
+\newcommand{\fIoII}{\frac{1}{2}}
+\newcommand{\fIoIII}{\frac{1}{3}}
+\newcommand{\fIoIV}{\frac{1}{4}}
+\newcommand{\fIoV}{\frac{1}{5}}
+\newcommand{\fIoVI}{\frac{1}{6}}
+\newcommand{\fIoVII}{\frac{1}{7}}
+\newcommand{\fIoVIII}{\frac{1}{8}}
+\end{split}\]</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="discrete-information-sources">
+<h1>Discrete Information Sources<a class="headerlink" href="#discrete-information-sources" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-mathematical-definition-of-information">
+<h2>A mathematical definition of information<a class="headerlink" href="#a-mathematical-definition-of-information" title="Permalink to this headline">¶</a></h2>
+<p>In order to analyze information generation, encoding and transmission
+with mathematical tools,
+we need a solid and clear definition of information.</p>
+<!-- ### Block diagram of a communication system
+
+![Block diagram of a communication system](img/CommBlockDiagram.png){width=50%}
+
+- Source: creates information messages 
+- Encoder: converts messages into symbols for transmission (i.e bits)
+- Channel: delivers the symbols, introduces errors
+- Decoder: detects/corrects the errors, rebuilds the information messages -->
+<div class="section" id="what-is-information">
+<h3>What is information?<a class="headerlink" href="#what-is-information" title="Permalink to this headline">¶</a></h3>
+<p>Let’s start first with some simple examples of messages carrying information.</p>
+<p>Consider the sentence:</p>
+<blockquote>
+<div><p>“Poli Iași (the local football team) lost the last match”</p>
+</div></blockquote>
+<p>Does this message carry information? How, why, how much?</p>
+<p>When thinking about the information brought by such a phrase, let’s consider the following facts:</p>
+<ul class="simple">
+<li><p>the message carries information only when you don’t already know the result</p></li>
+<li><p>if you already known the result, the message is useless (brings no information)</p></li>
+<li><p>if the result was to be expected, there is little information (e.g. suppose Poli Iași plays agains FC Barcelona)</p></li>
+<li><p>if the result is highly unusual, there is more information in this message</p></li>
+</ul>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>To understand why the amount of information involved here
+depends on whether the result is to be expected or is highly unusual,
+consider a case when information is valuable, for example:</p>
+<ul class="simple">
+<li><p>in an exam or quiz with multiple-choice answers (e.g. Who Wants to be a Millionaire)</p></li>
+<li><p>in sports betting (gambling),</p></li>
+</ul>
+<p>The amount you gain depends on the amount of information you have on the topic: those who know a lot compared to others win a lot,
+those who know little win just a little. But you’re not winning a fortune
+by answering easy questions which most people know, or betting on result which everybody expects.
+We explain this by the fact that there is little information involved in them.
+You do win a lot by answering hard questions or betting on surprising results,
+and since it’s the information which is valuable, it shows that unexpected outcomes have lots of information.</p>
+</div>
+<div class="section" id="information-and-events">
+<h4>Information and events<a class="headerlink" href="#information-and-events" title="Permalink to this headline">¶</a></h4>
+<p>As seen in the example above, the notion of information requires a probabilistic setting.</p>
+<p>We define the notion of <strong>information</strong> for a <strong>probabilistic event</strong>:</p>
+<ul class="simple">
+<li><p>an event may or may not happen, and when it does happen, it creates information</p></li>
+<li><p>the information is: “this event happened”</p></li>
+<li><p>the amount of information depends on the <strong>probability</strong> of that event</p></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>As a rule of thumb, keep in mind:</p>
+<ul class="simple">
+<li><p>if you can guess something most of the times, it has little information</p></li>
+<li><p>if something is unexpected, it has a lot of information</p></li>
+</ul>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Let’s answer some questions:</p>
+<ul class="simple">
+<li><p>does a sure event (p = 1) bring any information?</p></li>
+<li><p>does an almost sure event (e.g. P = 0.9999)  bring little or much information?</p></li>
+<li><p>does a rare event (e.g. P = 0.0001) bring a little or much information?</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="definition-of-information">
+<h4>Definition of information<a class="headerlink" href="#definition-of-information" title="Permalink to this headline">¶</a></h4>
+<p>Throughout this class, we refer to a probabilistic event as a <strong>“message”</strong></p>
+<p>The information attached to a message <span class="math notranslate nohighlight">\(s_i\)</span> is rigorously defined as:
+$<span class="math notranslate nohighlight">\(i(s_i) = -\log_2(p(s_i))\)</span>$</p>
+<p>Consequences of this definition:</p>
+<ul class="simple">
+<li><p>Information of an event is always non-negative:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  i(s_i) \geq 0
+  \]</div>
+<ul class="simple">
+<li><p>Lower probability (rare events) means higher information</p></li>
+<li><p>Higher probability (frequent events) means lower information</p></li>
+<li><p>The certain event (<span class="math notranslate nohighlight">\(p = 1)\)</span> brings no information:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  -\log(1) = 0
+  \]</div>
+<ul class="simple">
+<li><p>An event with probability <span class="math notranslate nohighlight">\(0\)</span> brings infinite information (but it never happens…)</p></li>
+<li><p>When two independent <span class="math notranslate nohighlight">\(s_i\)</span> and <span class="math notranslate nohighlight">\(s_j\)</span> events take place, their information gets added:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{align}
+  i(s_i \cap s_j) &amp;= -log_2(p(s_i \cap s_j) \\
+  &amp;= -log_2(p(s_i) \cdot p(s_j) \\
+  &amp;= -log_2(p(s_i) - log_2(p(s_j)) \\
+  &amp;= i(s_i) + i(s_j)
+  \end{align}
+  \end{split}\]</div>
+</div>
+<div class="section" id="the-choice-of-logarithm">
+<h4>The choice of logarithm<a class="headerlink" href="#the-choice-of-logarithm" title="Permalink to this headline">¶</a></h4>
+<p>Using the logarithm function in the definition is crucial,
+since it is responsible for most of these properties.
+In particular, the fact that logarithm transforms a product into a sum
+allws to sum the informations of independent events.</p>
+<p>Any base of logarithm can be used in the definition, not just base 2,
+and all the consequences still hold.</p>
+<ul class="simple">
+<li><p>By convention, we typically use the binary logarithm <span class="math notranslate nohighlight">\(\log_2()\)</span>.
+In this case, the information <span class="math notranslate nohighlight">\(i(s_i)\)</span> is measured in <strong>bits</strong></p></li>
+<li><p>We could use instead the natural logarithm <span class="math notranslate nohighlight">\(ln()\)</span>, and the result
+is measured in <em>nats</em>.</p></li>
+</ul>
+<p>The choice of the algorithm is not critical and doesn’t change anything fundamental,
+since logarithm bases can always be converted to/from one another:</p>
+<div class="math notranslate nohighlight">
+\[
+\log_b(x) = \frac{\log_a(x)}{\log_a(b)}
+\]</div>
+<p>This means that information defined using different logarithms differ only by a scaling factor:</p>
+<div class="math notranslate nohighlight">
+\[
+i_b(s_i) =\frac{i_a(s_i)}{\log_a(b)}
+\]</div>
+<p>Following the convention of the scientific literature, we shall use the base 2 logarithm <span class="math notranslate nohighlight">\(log_2()\)</span> from now on.</p>
+</div>
+</div>
+<div class="section" id="information-source">
+<h3>Information Source<a class="headerlink" href="#information-source" title="Permalink to this headline">¶</a></h3>
+<p>A probabilistic event is always part of a set of multiple events,
+containing all the possible outcomes which can happen at a given time.</p>
+<p>Each event (known as “message”) has its own probability, which are all known beforehand.
+At a given time, only one of the events can happen.
+This carries the information that <strong>it</strong> happened (out of all possible events),
+and the quantity information quantity is dependent of the probability.</p>
+<p>We define an <strong>information source</strong> as the set of all events,
+together with their probabilities.</p>
+<p>Example:</p>
+<ul class="simple">
+<li><p>a football team can win / lose / draw a match (3 possible events)</p></li>
+</ul>
+<p>The set of all messages forms the “<em>alphabet</em>” of the source.</p>
+<p>When an event takes place, we say that “the information source generates a message”.</p>
+<div class="section" id="sequence-of-messages">
+<h4>Sequence of messages<a class="headerlink" href="#sequence-of-messages" title="Permalink to this headline">¶</a></h4>
+<p>We are very rarely interested in a single message.
+Instead, we are interested analyzing large amounts of messages.</p>
+<p>An information source creates a <strong>sequence of messages</strong>, by generating
+messages one after another, randomly, according to the known probabilities.</p>
+<ul class="simple">
+<li><p>e.g. like throwing a coin or a dice several times in a row</p></li>
+</ul>
+<p>Depending on how the messages are generated, we distinguish between two types
+of information sources:</p>
+<ol class="simple">
+<li><p><strong>Memoryless</strong> sources: each new message is generated independently on the previous messages</p></li>
+<li><p>Sources <strong>with memory</strong>: when generating a new message, the probabilities depend on one or more of the previous messages</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="discrete-memoryless-source">
+<h3>Discrete memoryless source<a class="headerlink" href="#discrete-memoryless-source" title="Permalink to this headline">¶</a></h3>
+<p>A <strong>discrete memoryless source</strong> (DMS) is an information source which produces a sequence of <strong>independent</strong> messages.
+The choice of a message at one time does not depend on the previous messages.
+Each message has a fixed probability, and every new message is generated randomly based on the probabilities.</p>
+<p>The set of probabilities is the <strong>distribution</strong> of the source,
+also known as a <strong>probabilty mass function</strong>.</p>
+<p>We represent a DMS as below,
+by giving it a name (“S”), listing the messages (<span class="math notranslate nohighlight">\(s_1, s_2, s_3\)</span>) and the probability distribution:</p>
+<div class="math notranslate nohighlight">
+\[
+\sIII{S}{\fIoII}{\fIoIV}{\fIoIV}
+\]</div>
+<p>A DMS is a discrete, complete and memoryless:</p>
+<ul class="simple">
+<li><p><strong>Discrete</strong>: the set of messages is a discrete set</p></li>
+<li><p><strong>Complete</strong>: the sum of all probabilities is 1, which means that one and only one event must take place at a given time:
+$<span class="math notranslate nohighlight">\(
+\sum p(s_i) = 1
+\)</span>$</p></li>
+<li><p><strong>Memoryless</strong>: each message is independent of the previous messages</p></li>
+</ul>
+<p>A good example of a DMS is a coin, or a dice.</p>
+<p>One message generated by DMS is also called a <strong>random variable</strong> in probabilistics.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>A coin is a discrete memoryless source (DMS) with two messages:</p>
+<div class="math notranslate nohighlight">
+\[
+  \snII{S}{heads}{\fIoII}{tails}{\fIoII}
+  \]</div>
+<p>A dice is a discrete memoryless source (DMS) with six messages:</p>
+<div class="math notranslate nohighlight">
+\[
+  \sVI{S}{\fIoVI}{\fIoVI}{\fIoVI}{\fIoVI}{\fIoVI}{\fIoVI}
+  \]</div>
+<p>Playing the lottery can be modeled as DMS:</p>
+<div class="math notranslate nohighlight">
+\[
+  \sII{S}{0.9999}{0.0001}
+  \]</div>
+<p>An extreme type of DMS containing the certain event:</p>
+<div class="math notranslate nohighlight">
+\[
+  \sII{S}{1}{0}
+  \]</div>
+<p>Receiving an unknown <em>bit</em> (0 or 1) with equal probabilities:</p>
+<div class="math notranslate nohighlight">
+\[
+  \snII{S}{0}{\fIoII}{1}{\fIoII}
+  \]</div>
+</div>
+<div class="section" id="sequence-of-messages-from-dms">
+<h4>Sequence of messages from DMS<a class="headerlink" href="#sequence-of-messages-from-dms" title="Permalink to this headline">¶</a></h4>
+<p>A DMS produces a sequence of messages by randomly selecting a message every time,
+with the same fixed probabilities, producing a sequence like:</p>
+<div class="math notranslate nohighlight">
+\[
+s_3 s_2 s_4 s_1 s_2 s_1 s_3 \dots
+\]</div>
+<p>For example, throwing a dice several times in a row you can get a sequence</p>
+<div class="math notranslate nohighlight">
+\[
+4, 2, 3, 2, 1, 6, 1, 5, 4, 5 \dots
+\]</div>
+<p>In a sequence which is very long, with length <span class="math notranslate nohighlight">\(N \to \infty\)</span>,
+each message <span class="math notranslate nohighlight">\(s_i\)</span> appears in the sequence approximately <span class="math notranslate nohighlight">\(p(s_i) * N\)</span> times.
+This gets more precise as <span class="math notranslate nohighlight">\(N\)</span> gets larger.</p>
+</div>
+</div>
+<div class="section" id="entropy-of-a-dms">
+<h3>Entropy of a DMS<a class="headerlink" href="#entropy-of-a-dms" title="Permalink to this headline">¶</a></h3>
+<p>We usually don’t care about the information of single message. We are interested in long sequences of messages
+(think millions of bits of data).</p>
+<p>To analyze this in an easy manner, we need the <em>average</em> information of a message from a DMS.</p>
+<p>The <strong>entropy of a DMS source</strong> <span class="math notranslate nohighlight">\(S\)</span> is <strong>the average information of a message</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+H(S) = \sum_{k} p(s_k) i(s_k) = -\sum_{k} p(s_k) \log_2(p_k)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(p(s_k)\)</span>  is the probability of message <span class="math notranslate nohighlight">\(k\)</span></p>
+<p>Since information of a message is measured in bits,
+entropy is measured in <strong>bits</strong> (or <strong>bits / message</strong>, to indicate it is an average value).</p>
+<p>Entropies using information defined with different logarithms base are differ only by a scaling factor:
+$<span class="math notranslate nohighlight">\(
+H_b(S) =\frac{H_a(S)}{\log_a(b)}
+\)</span>$</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>Let’s compute the entropies of some of the DMS defined above.</p>
+<p>Coin:</p>
+<div class="math notranslate nohighlight">
+\[
+  H(S) = 1 \textrm{ bit/message}
+  \]</div>
+<p>Dice:</p>
+<div class="math notranslate nohighlight">
+\[
+  H(S) = \log(6) \textrm{  bits/message}
+  \]</div>
+<p>Lottery:</p>
+<div class="math notranslate nohighlight">
+\[
+  H(S) = -0.9999 \log(0.9999) - 0.0001 \log(0.0001) \textrm{ bits/message}
+  \]</div>
+<p>Receiving 1 bit with equal probabilities:</p>
+<div class="math notranslate nohighlight">
+\[
+  H(S) = 1 \textrm{ bit/message}
+  \]</div>
+<p>(hence the name!)</p>
+</div>
+<div class="section" id="interpretation-of-the-entropy">
+<h4>Interpretation of the entropy<a class="headerlink" href="#interpretation-of-the-entropy" title="Permalink to this headline">¶</a></h4>
+<p>The entropy of an information source S is a fundamental quantity.
+It allows us to compare two different sources, which model
+different scenarios from real life.</p>
+<p>All the following interpretations of entropy are true:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H(S)\)</span> is the <strong>average uncertainty</strong> of the source S</p></li>
+<li><p><span class="math notranslate nohighlight">\(H(S)\)</span> is the <strong>average information</strong> of a message from source S</p></li>
+<li><p>A very long sequence of <span class="math notranslate nohighlight">\(N\)</span> messages generated by source S has total information <span class="math notranslate nohighlight">\(\approx N \cdot H(S)\)</span></p></li>
+</ul>
+<p>We shall see in Chapter III that the entropy <span class="math notranslate nohighlight">\(H(S)\)</span> says something very important
+about the <strong>number of bits</strong> requires to represent data in binary form:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H(S)\)</span> is the minimum number of bits (<span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>) required to uniquely represent a message from source S, on average</p></li>
+<li><p>A very long sequence of <span class="math notranslate nohighlight">\(N\)</span> messages generated by source S needs at least <span class="math notranslate nohighlight">\(\approx N \cdot H(S)\)</span> bits in order to be represented in binary form</p></li>
+</ul>
+<p>Thus, <span class="math notranslate nohighlight">\(H(S)\)</span> is crucial when we discuss how to represent data efficiently.</p>
+</div>
+<div class="section" id="properties-of-entropy">
+<h4>Properties of entropy<a class="headerlink" href="#properties-of-entropy" title="Permalink to this headline">¶</a></h4>
+<p>We prove the following <strong>properties of entropy</strong>:</p>
+<ol>
+<li><p><span class="math notranslate nohighlight">\(H(S) \geq  0\)</span> (non-negative)</p>
+<p>Proof: via definition</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(H(S)\)</span> is maximum when all <span class="math notranslate nohighlight">\(n\)</span> messages have equal probability <span class="math notranslate nohighlight">\(\frac{1}{n}\)</span>.
+The maximum value is <span class="math notranslate nohighlight">\(\max H(S) = \log(n)\)</span></p>
+<p>Proof: only for the case of 2 messages, use derivative in definition</p>
+</li>
+<li><p><em>Diversification</em> of the source always increases the entropy</p>
+<p>Proof: compare entropies in both cases</p>
+</li>
+</ol>
+</div>
+<div class="section" id="the-entropy-of-a-binary-source">
+<h4>The entropy of a binary source<a class="headerlink" href="#the-entropy-of-a-binary-source" title="Permalink to this headline">¶</a></h4>
+<p>Consider a general DMS with two messages:</p>
+<div class="math notranslate nohighlight">
+\[
+  \sII{S}{p}{1-p}
+  \]</div>
+<p>It’s entropy is:</p>
+<div class="math notranslate nohighlight">
+\[
+  H(S) = -p \cdot \log(p) - (1-p) \cdot \log(1-p)
+  \]</div>
+<p>The entropy value as a function of <span class="math notranslate nohighlight">\(p\)</span> is represented below:</p>
+<!-- ![Entropy of a binary source](img/EntropyBinary.png){height=40%} -->
+<p><img alt="Entropy of a binary source" src="../../_images/EntropyBinary.png" /></p>
+<p>As an illustration of the property no.2 from above,
+we can see that the maximum entropy value of a DMS with two messages is reached
+when the two messages have the same probability, <span class="math notranslate nohighlight">\(p = 0.5\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+p(s_1) = p = p(s_2) = 1 - p = 0.5
+\]</div>
+<p>and its value is:</p>
+<div class="math notranslate nohighlight">
+\[
+H_{max}(S) = 1
+\]</div>
+</div>
+<div class="section" id="let-s-play-games">
+<h4>Let’s play games<a class="headerlink" href="#let-s-play-games" title="Permalink to this headline">¶</a></h4>
+<p>Let’s analyze the following guessing games with the tools introduced until now.</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>I think of a number between 1 and 8. You have to guess it by asking
+yes/no questions.</p>
+<ul class="simple">
+<li><p>How much uncertainty does the problem have?</p></li>
+<li><p>How is the best way to ask questions? Why?</p></li>
+<li><p>What if the questions are not asked in the best way?</p></li>
+<li><p>On average, what is the number of questions required to find the number?</p></li>
+</ul>
+<p>Now suppose I randomly choose a number according to the following distribution:</p>
+<div class="math notranslate nohighlight">
+\[
+  \sIV{S}{\fIoII}{\fIoIV}{\fIoVIII}{\fIoVIII}
+  \]</div>
+<ul class="simple">
+<li><p>On average, what is the number of questions required to find the number?</p></li>
+<li><p>What questions would you ask?</p></li>
+</ul>
+<p>But what if the distribution is the following?</p>
+<div class="math notranslate nohighlight">
+\[
+  \sIV{S}{0.14}{0.29}{0.4}{0.17}
+  \]</div>
+<p>Let’s draw some general conclusions:</p>
+<ul class="simple">
+<li><p>What distribution makes guessing the number the most difficult?</p></li>
+<li><p>What distribution makes guessing the number the easiest?</p></li>
+</ul>
+<p>An <strong>optimal decision tree</strong> is best sequence of questions to ask in order to find the number with a minimum number
+of questions, reprsented as a binary tree graph. You will see examples when we solve the exercises.</p>
+</div>
+</div>
+<div class="section" id="efficiency-redundancy-flow">
+<h4>Efficiency, redundancy, flow<a class="headerlink" href="#efficiency-redundancy-flow" title="Permalink to this headline">¶</a></h4>
+<p>Using the <span class="math notranslate nohighlight">\(H(S)\)</span>, we define several other useful characteristics of a DMS.</p>
+<p>The <strong>efficiency</strong> of a DMS indicates how close is the entropy to its maximum possible value:</p>
+<div class="math notranslate nohighlight">
+\[
+  \eta = \frac{H(S)}{H_{max}} = \frac{H(S)}{\log(n)}
+  \]</div>
+<p>The <strong>redundancy</strong> of a source is the remaining gap.</p>
+<ul class="simple">
+<li><p><strong>Absolute</strong> redundancy of a DMS:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  R = H_{max} - H(S)
+  \]</div>
+<ul>
+<li><p><strong>Relative</strong> redundancy of a DMS:</p>
+<div class="math notranslate nohighlight">
+\[
+    \rho = \frac{H_{max} - H(S)}{H_{max}} = 1 - \eta
+    \]</div>
+</li>
+</ul>
+<p>Suppose that each message <span class="math notranslate nohighlight">\(s_i\)</span> takes some time <span class="math notranslate nohighlight">\(t_i\)</span> to be transmitted via some communication channel.
+The <strong>information flow</strong> of a DMS <span class="math notranslate nohighlight">\(S\)</span> is the average information transmitted per unit of time:</p>
+<div class="math notranslate nohighlight">
+\[
+H_\tau(S) = \frac{H(S)}{\overline{t}},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\overline{t}\)</span> is the average duration of transmitting a message:</p>
+<div class="math notranslate nohighlight">
+\[
+\overline{t} = \sum_{i} p_i t_i 
+\]</div>
+<p>The information flow is measured in <strong>bps</strong> (bits per second), and is important for data communication.</p>
+</div>
+<div class="section" id="distance-between-distributions">
+<h4>Distance between distributions<a class="headerlink" href="#distance-between-distributions" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>How to measure how similar / how different are two distributions?</p>
+<ul>
+<li><p>must have the same number of messages</p></li>
+<li><p>example: <span class="math notranslate nohighlight">\(p(s_1), ... p(s_n)\)</span> and <span class="math notranslate nohighlight">\(q(s_1), ... q(s_n)\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Definition</strong>: the <strong>Kullback–Leibler distance</strong> of two distributions P and Q is
+$<span class="math notranslate nohighlight">\(D_{KL}(P || Q) = \sum_i p(s_i) \log(\frac{p(s_i)}{q(s_i)})\)</span>$</p></li>
+<li><p>It is a way to measure the <strong>distance (difference)</strong> between two distributions</p></li>
+<li><p>Also known as <em>relative entropy</em>, or the Kullback-Leibler <em>divergence</em></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="properties-of-kullback-leibler-distance">
+<h3>Properties of Kullback-Leibler distance<a class="headerlink" href="#properties-of-kullback-leibler-distance" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Properties:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(D_{KL}(P || Q)\)</span> is always <span class="math notranslate nohighlight">\(\geq 0\)</span>, and is equal to 0 only when P and Q are the same</p></li>
+<li><p>the higher <span class="math notranslate nohighlight">\(D_{KL}(P || Q)\)</span> is, the more different the distributions are</p></li>
+<li><p>it is <strong>not commutative</strong>: <span class="math notranslate nohighlight">\(D_{KL}(P || Q) \neq D_{KL}(Q || P)\)</span></p></li>
+</ul>
+</li>
+<li><p>Example: at whiteboard</p></li>
+<li><p>Example usage: classification systems (cross-entropy loss)</p></li>
+</ul>
+</div>
+<div class="section" id="extended-dms">
+<h3>Extended DMS<a class="headerlink" href="#extended-dms" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Definition: the <strong>n-th order extension</strong> of a DMS <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(S^n\)</span> is a source which
+has as messages all the combinations of <span class="math notranslate nohighlight">\(n\)</span> messages of <span class="math notranslate nohighlight">\(S\)</span>:
+$<span class="math notranslate nohighlight">\(\sigma_i = \underbrace{s_j s_k ... s_l}_{n}\)</span>$</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(S\)</span> has <span class="math notranslate nohighlight">\(k\)</span> messages, <span class="math notranslate nohighlight">\(S^n\)</span> has <span class="math notranslate nohighlight">\(k^n\)</span> messages</p></li>
+<li><p>Since <span class="math notranslate nohighlight">\(S\)</span> is DMS, probabilities multiply:
+$<span class="math notranslate nohighlight">\(p(\sigma_i) = p(s_j) \cdot p(s_k) \cdot ... \cdot p(s_l)\)</span>$</p></li>
+</ul>
+</div>
+<div class="section" id="extended-dms-example">
+<h3>Extended DMS - Example<a class="headerlink" href="#extended-dms-example" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Examples:
+$<span class="math notranslate nohighlight">\(\sII{S}{\fIoIV}{\frac{3}{4}}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\snIV{S^2}{\sigma_1 = s_1 s_1}{\frac{1}{16}}{\sigma_2 = s_1 s_2}{\frac{3}{16}}{\sigma_3 = s_2 s_1}{\frac{3}{16}}{\sigma_4 = s_2 s_2}{\frac{9}{16}}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(S^3: \left( \begin{matrix} s_1 s_1 s_1 &amp; s_1 s_1 s_2 &amp; s_1 s_2 s_1 &amp; s_1 s_2 s_2 &amp; s_2 s_1 s_1 &amp; s_2 s_1 s_2 &amp; s_2 s_2 s_1 &amp; s_2 s_2 s_2 \\ ... &amp; ... &amp; ... &amp; ... &amp; ... &amp; ... &amp; ... &amp; ... \end{matrix} \right)\)</span>$</p></li>
+</ul>
+</div>
+<div class="section" id="extended-dms-another-example">
+<h3>Extended DMS - Another example<a class="headerlink" href="#extended-dms-another-example" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Long sequence of binary messages:
+$<span class="math notranslate nohighlight">\(0 1 0 0 1 1 0 0 1 1 1  0 0 1 0 1 0 0 ...\)</span>$</p>
+<ul>
+<li><p>Can be grouped in bits, half-bytes, bytes, 16-bit words, 32-bit long words, and so on</p></li>
+<li><p>Can be considered:</p>
+<ul>
+<li><p>N messages from a binary source (with 1 bit), or</p></li>
+<li><p>N/2 messages from a source with 4 messages (with 2 bits)…</p></li>
+<li><p>etc</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="property-of-dms">
+<h3>Property of DMS<a class="headerlink" href="#property-of-dms" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Theorem: The entropy of a <span class="math notranslate nohighlight">\(n\)</span>-th order extension is <span class="math notranslate nohighlight">\(n\)</span> times larger than the entropy of the original DMS
+$<span class="math notranslate nohighlight">\(H(S^n) = n H(S)\)</span>$</p></li>
+<li><p>Interpretation: grouping messages from a long sequence in blocks of <span class="math notranslate nohighlight">\(n\)</span> does not change total information
+(e.g. groups of 8 bits = 1 byte)</p></li>
+</ul>
+</div>
+<div class="section" id="an-example-memoryless-is-not-enough">
+<h3>An example [memoryless is not enough]<a class="headerlink" href="#an-example-memoryless-is-not-enough" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>The distribution (frequencies) of letters in English:</p>
+<p><img alt="" src="../../_images/EngLetterProb.jpg" />{width=30%}\</p>
+</li>
+<li><p>Text from a memoryless source with these probabilities:</p>
+<p><img alt="" src="../../_images/EnglishFirstOrder.png" />{width=50%}\</p>
+<p><em>(taken from Elements of Information Theory, Cover, Thomas)</em></p>
+</li>
+<li><p>What’s wrong? <strong>Memoryless</strong></p></li>
+</ul>
+</div>
+<div class="section" id="sources-with-memory">
+<h3>Sources with memory<a class="headerlink" href="#sources-with-memory" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: A source has <strong>memory of order <span class="math notranslate nohighlight">\(m\)</span></strong> if the probability
+of a message depends on the last <span class="math notranslate nohighlight">\(m\)</span> messages.</p></li>
+<li><p>The last <span class="math notranslate nohighlight">\(m\)</span> messages = the <strong>state</strong> of the source (notation <span class="math notranslate nohighlight">\(S_i\)</span>).</p></li>
+<li><p>A source with <span class="math notranslate nohighlight">\(n\)</span> messages and memory <span class="math notranslate nohighlight">\(m\)</span> =&gt; has <span class="math notranslate nohighlight">\(n^m\)</span> states in all.</p></li>
+<li><p>For every state, messages can have a different set of
+probabilities. Notation: <span class="math notranslate nohighlight">\(p(s_i | S_k)\)</span> = <em>“probability of <span class="math notranslate nohighlight">\(s_i\)</span> in state <span class="math notranslate nohighlight">\(S_k\)</span>”</em>.</p></li>
+<li><p>Also known as <em>Markov sources</em>.</p></li>
+</ul>
+</div>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>A source with <span class="math notranslate nohighlight">\(n=4\)</span> messages and memory <span class="math notranslate nohighlight">\(m=1\)</span></p>
+<ul>
+<li><p>if last message was <span class="math notranslate nohighlight">\(s_1\)</span>, choose next message with distribution
+$<span class="math notranslate nohighlight">\(\sIV{S_1}{0.4}{0.3}{0.2}{0.1}\)</span>$</p></li>
+<li><p>if last message was <span class="math notranslate nohighlight">\(s_2\)</span>, choose next message with distribution
+$<span class="math notranslate nohighlight">\(\sIV{S_2}{0.33}{0.37}{0.15}{0.15}\)</span>$</p></li>
+<li><p>if last message was <span class="math notranslate nohighlight">\(s_3\)</span>, choose next message with distribution
+$<span class="math notranslate nohighlight">\(\sIV{S_3}{0.2}{0.35}{0.41}{0.04}\)</span>$</p></li>
+<li><p>if last message was <span class="math notranslate nohighlight">\(s_4\)</span>, choose next message with distribution
+$<span class="math notranslate nohighlight">\(\sIV{S_4}{0.1}{0.2}{0.3}{0.4}\)</span>$</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="transitions">
+<h3>Transitions<a class="headerlink" href="#transitions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>When a new message is provided, the source <strong>transitions</strong> to a
+new state:
+$<span class="math notranslate nohighlight">\(...\underbrace{s_i s_j s_k}_{\text{old state}} s_l\)</span><span class="math notranslate nohighlight">\(
+  \)</span><span class="math notranslate nohighlight">\(...s_i \underbrace{s_j s_k s_l}_{\text{new state}}\)</span>$</p></li>
+<li><p>The message probabilities = the probabilities of transitions from
+some state <span class="math notranslate nohighlight">\(S_u\)</span> to another state <span class="math notranslate nohighlight">\(S_v\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="transition-matrix">
+<h3>Transition matrix<a class="headerlink" href="#transition-matrix" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The transition probabilities are organized in a <strong>transition
+matrix</strong> <span class="math notranslate nohighlight">\([T]\)</span>
+$<span class="math notranslate nohighlight">\([T] = 
+  \begin{bmatrix}
+  p_{11} &amp; p_{12} &amp; ... &amp; p_{1N} \\ 
+  p_{21} &amp; p_{22} &amp; ... &amp; p_{2N} \\ 
+  ... &amp; ... &amp; ... &amp; ... \\ 
+  p_{N1} &amp; p_{N2} &amp; ... &amp; p_{NN} \\ 
+  \end{bmatrix}\)</span>$</p></li>
+<li><p><span class="math notranslate nohighlight">\(p_{ij}\)</span> is the transition probability from state <span class="math notranslate nohighlight">\(S_i\)</span> to state
+<span class="math notranslate nohighlight">\(S_j\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span> is the total number of states</p></li>
+</ul>
+</div>
+<div class="section" id="graphical-representation">
+<h3>Graphical representation<a class="headerlink" href="#graphical-representation" title="Permalink to this headline">¶</a></h3>
+<p>At whiteboard: draw states and transitions for previous example
+(source with <span class="math notranslate nohighlight">\(n=4\)</span> messages and memory <span class="math notranslate nohighlight">\(m=1\)</span>)</p>
+</div>
+<div class="section" id="entropy-of-sources-with-memory">
+<h3>Entropy of sources with memory<a class="headerlink" href="#entropy-of-sources-with-memory" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>What entropy does s source with memory have?</p></li>
+<li><p>Each state <span class="math notranslate nohighlight">\(S_k\)</span> has a different distribution –&gt; each state has a different entropy <span class="math notranslate nohighlight">\(H(S_k)\)</span>
+$<span class="math notranslate nohighlight">\(H(S_k) = - \sum_i p(s_i | S_k) \cdot \log(p(s_i | S_k))\)</span>$</p></li>
+<li><p>Global entropy = average entropy
+$<span class="math notranslate nohighlight">\(H(S) = \sum_k p_k H(S_k)\)</span><span class="math notranslate nohighlight">\(
+where \)</span>p_k<span class="math notranslate nohighlight">\( = probability that the source is in state \)</span>S_i$</p>
+<ul>
+<li><p>(i.e. after a very long sequence of messages, the fraction of time when the source was in state <span class="math notranslate nohighlight">\(S_k\)</span>)</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="ergodic-sources">
+<h3>Ergodic sources<a class="headerlink" href="#ergodic-sources" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>How to find out the weights <span class="math notranslate nohighlight">\(p_k\)</span>?</p></li>
+<li><p>They are known as the <strong>stationary probabilities</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(p_k\)</span> = probability that the source is in state <span class="math notranslate nohighlight">\(S_i\)</span>, after running for a very long time</p>
+<ul class="simple">
+<li><p>(i.e. after a very long sequence of messages, the fraction of time when the source was in state <span class="math notranslate nohighlight">\(S_k\)</span>)</p></li>
+</ul>
+</li>
+<li><p>We need to answer the following question:</p>
+<p>If we know the state <span class="math notranslate nohighlight">\(S_k\)</span> at time <span class="math notranslate nohighlight">\(n\)</span>, what will be the state at time <span class="math notranslate nohighlight">\(n+1\)</span>?</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h3>Ergodic sources<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(p_i^{(n)} =\)</span> the probability that source <span class="math notranslate nohighlight">\(S\)</span> is in state <span class="math notranslate nohighlight">\(S_i\)</span> at time <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+<li><p>In what state will it be at time <span class="math notranslate nohighlight">\(n+1\)</span>? (after one more message)</p>
+<ul>
+<li><p>i.e. what are the probabilities of the states at time <span class="math notranslate nohighlight">\(n+1\)</span>?</p></li>
+</ul>
+</li>
+<li><p>Just multiply with <span class="math notranslate nohighlight">\(T\)</span>
+$<span class="math notranslate nohighlight">\([p_1^{(n)}, p_2^{(n)}, ... , p_N^{(n)}] \cdot [T] = [p_1^{(n+1)}, p_2^{(n+1)}, ... , p_N^{(n+1)}]\)</span>$</p></li>
+<li><p>After one more message:
+$<span class="math notranslate nohighlight">\([p_1^{(n)}, p_2^{(n)}, ... , p_N^{(n)}] \cdot [T] \cdot [T] = [p_1^{(n+2)}, p_2^{(n+2)}, ... , p_N^{(n+2)}]\)</span>$</p></li>
+<li><p>For every new moment of time, one more multiplication with <span class="math notranslate nohighlight">\(T\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>Ergodic sources<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>In general, starting from time <span class="math notranslate nohighlight">\(0\)</span>, after <span class="math notranslate nohighlight">\(n\)</span> messages the probabilities that the source is in a certain state are:
+$<span class="math notranslate nohighlight">\([p_1^{(0)}, p_2^{(0)}, ... , p_N^{(0)}] \cdot [T]^{n} = [p_1^{(n)}, p_2^{(n)}, ... , p_N^{(n)}]\)</span>$</p></li>
+</ul>
+</div>
+<div class="section" id="ergodicity">
+<h3>Ergodicity<a class="headerlink" href="#ergodicity" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>A source is called <strong>ergodic</strong> if every state can be reached from every state, in a finite number of steps.</p></li>
+<li><p>Property of ergodic sources:</p>
+<ul>
+<li><p>After many messages, the probabilities of the states <em>become stationary</em> (converge to some fixed values),
+irrespective of the initial probabilities (no matter what state the source started from initially)</p>
+<div class="math notranslate nohighlight">
+\[\lim_{n \to \infty} [p_1^{(n)}, p_2^{(n)}, ... p_N^{(n)}] = [p_1, p_2, ... p_N]\]</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="finding-the-stationary-probabilties">
+<h3>Finding the stationary probabilties<a class="headerlink" href="#finding-the-stationary-probabilties" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>How to find the value of the stationary probabilities?</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(n\)</span> is very large, after <span class="math notranslate nohighlight">\(n\)</span> messages and after <span class="math notranslate nohighlight">\(n+1\)</span> messages the probabilities are the same:
+$<span class="math notranslate nohighlight">\([p_1, p_2, ... p_N] \cdot [T] = [p_1, p_2, ... p_N]\)</span>$</p></li>
+<li><p>This is an equation system in matrix form</p></li>
+<li><p>One line should be removed (linear combination), and replaced with:
+$<span class="math notranslate nohighlight">\(p_1 + p_2 + ... + p_N = 1\)</span>$</p></li>
+<li><p>Solve the resulting system of equations, find values of <span class="math notranslate nohighlight">\(p_k\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="entropy-of-ergodic-sources-with-memory">
+<h3>Entropy of ergodic sources with memory<a class="headerlink" href="#entropy-of-ergodic-sources-with-memory" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The entropy of an ergodic source with memory is
+$<span class="math notranslate nohighlight">\(H(S) = \sum_k p_k H(S_k) = - \sum_k p_k \sum_i p(s_i | S_k) \cdot \log(p(s_i | S_k)\)</span>$</p></li>
+</ul>
+</div>
+<div class="section" id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+<ol>
+<li><p>Consider a discrete source with memory, with the graphical representation given below.
+The states are defined as follows: <span class="math notranslate nohighlight">\(S_1: s_1s_1\)</span>, <span class="math notranslate nohighlight">\(S_2: s_1s_2\)</span>, <span class="math notranslate nohighlight">\(S_3: s_2s_1\)</span>, <span class="math notranslate nohighlight">\(S_4: s_2s_2\)</span>.</p>
+<p><img alt="Graphical representation of the source" src="../../_images/MemorySource3.png" />{.id width=35%}</p>
+</li>
+</ol>
+</div>
+<div class="section" id="exercise-continued">
+<h3>Exercise (continued)<a class="headerlink" href="#exercise-continued" title="Permalink to this headline">¶</a></h3>
+<p>Questions:</p>
+<p>a. What are the values of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>?
+b. Write the transition matrix <span class="math notranslate nohighlight">\([T]\)</span>;
+c. Compute the entropy in state <span class="math notranslate nohighlight">\(S_4\)</span>;
+d. Compute the global entropy of the source;
+e. What are the memory order, <span class="math notranslate nohighlight">\(m\)</span>, and the number of messages of the source, <span class="math notranslate nohighlight">\(n\)</span>?
+f. If the source is initially in state <span class="math notranslate nohighlight">\(S_2\)</span>, in what states and with what probabilities
+will the source be after 2 messages?</p>
+</div>
+<div class="section" id="example-english-text-as-sources-with-memory">
+<h3>Example English text as sources with memory<a class="headerlink" href="#example-english-text-as-sources-with-memory" title="Permalink to this headline">¶</a></h3>
+<p><em>(taken from Elements of Information Theory, Cover, Thomas)</em></p>
+<ul>
+<li><p>Memoryless source, equal probabilities:</p>
+<p><img alt="" src="../../_images/EnglishZeroOrder.png" />{width=40%}\</p>
+</li>
+<li><p>Memoryless source, probabilities of each letter as in English:</p>
+<p><img alt="" src="../../_images/EnglishFirstOrder.png" />{width=40%}\</p>
+</li>
+<li><p>Source with memory <span class="math notranslate nohighlight">\(m=1\)</span>, frequency of pairs as in English:</p>
+<p><img alt="" src="../../_images/EnglishSecondOrder.png" />{width=40%}\</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>Example English text as sources with memory<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Source with memory <span class="math notranslate nohighlight">\(m=2\)</span>, frequency of triplets as in English:</p>
+<p><img alt="" src="../../_images/EnglishThirdOrder.png" />{width=40%}\</p>
+</li>
+<li><p>Source with memory <span class="math notranslate nohighlight">\(m=3\)</span>, frequency of 4-plets as in English:</p>
+<p><img alt="" src="../../_images/EnglishFourthOrder.png" />{width=40%}\</p>
+</li>
+</ul>
+</div>
+<div class="section" id="example-application">
+<h3>Example application<a class="headerlink" href="#example-application" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Suppose we receive a text with random missing letters</p></li>
+<li><p>We need to fill the blanks with the appropriate letters</p></li>
+<li><p>How?</p>
+<ul>
+<li><p>build a model: source with memory of some order</p></li>
+<li><p>fill the missing letter with the most likely letter given by the model</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="chapter-summary">
+<h3>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Information of a message: <span class="math notranslate nohighlight">\(i(s_k) = -\log_2(p(s_k))\)</span></p></li>
+<li><p>Entropy of a memoryless source: <span class="math notranslate nohighlight">\(H(S) = \sum_{k} p_k i(s_k) = -\sum_{k} p_k \log_2(p_k)\)</span></p></li>
+<li><p>Properties of entropy:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(H(S) \geq  0\)</span></p></li>
+<li><p>Is maximum when all messages have equal probability (<span class="math notranslate nohighlight">\(H_{max}(S) = \log(n)\)</span>)</p></li>
+<li><p><em>Diversfication</em> of the source always increases the entropy</p></li>
+</ol>
+</li>
+<li><p>Sources with memory: definition, transitions</p></li>
+<li><p>Stationary probabilities of ergodic sources with memory:
+<span class="math notranslate nohighlight">\([p_1, p_2, ... p_N] \cdot [T] = [p_1, p_2, ... p_N]\)</span>, <span class="math notranslate nohighlight">\(\sum_i p_i = 1\)</span>.</p></li>
+<li><p>Entropy of sources with memory:
+$<span class="math notranslate nohighlight">\(H(S) = \sum_k p_k H(S_k) = - \sum_k p_k \sum_i p(s_i | S_k) \cdot \log(p(s_i | S_k)\)</span>$</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "nikcleju/JupyBook",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/IT"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script type="text/x-thebe-config">
+      {
+        requestKernel: true,
+        binderOptions: {
+          repo: "matplotlib/ipympl",
+          ref: "0.6.1",
+          repoProvider: "github",
+        },
+      }
+    </script>    
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Nicolae Cleju<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
