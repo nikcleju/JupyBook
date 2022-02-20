@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
@@ -112,7 +113,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../IT/InformationSources.html">
-   Discrete Information Sources
+   1. Discrete Information Sources
   </a>
  </li>
 </ul>
@@ -394,7 +395,7 @@ i.e. restricted only to these cases.</p>
 \[\frac{P(I | V)}{P(I | NV)} = \frac{P(V|I) \cdot P(I)}{P(V)} \cdot \frac{P(NV)}{P(NV|I) \cdot P(I)} = \frac{P(V|I)}{P(NV|I)} \cdot \frac{P(NV)}{P(V)}\]</div>
 <p>The first term <span class="math notranslate nohighlight">\(\frac{P(V | I)}{P(NV | I)}\)</span> comes from our initial data and is equal to <span class="math notranslate nohighlight">\(\frac{27.7\%}{72.3\%}\)</span>. In the second term, <span class="math notranslate nohighlight">\(P(V)\)</span> and <span class="math notranslate nohighlight">\(P(NV)\)</span> are the general vaccination and non-vaccination rate in the general population. The Bayes rule shows that we must consider them as well.</p>
 <p>A quick search shows us that the vaccination rate around 17th October 2021 was around <span class="math notranslate nohighlight">\(P(V) = 29.4\%\)</span>, which means <span class="math notranslate nohighlight">\(P(NV) = 70.6\%\)</span>:</p>
-<p><img alt="Vaccination status in Romania around 17th October 2021" src="content/DEDP/images/2021-12-20-VaccinationStats.png" /></p>
+<p><img alt="Vaccination status in Romania around 17th October 2021" src="../../_images/BayesRuleVax_VaccinationStats.png" /></p>
 <p>We can now evaluate our result:</p>
 <div class="math notranslate nohighlight">
 \[\frac{P(I | V)}{P(I | NV)} = \frac{P(V|I)}{P(NV|I)} \cdot \frac{P(NV)}{P(V)} = \frac{27.7\%}{72.3\%} \cdot \frac{70.6\%}{29.4\%} = 0.920\]</div>
