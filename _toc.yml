@@ -3,6 +3,7 @@ root: content/intro
 parts:
 
   - caption: Information Theory
+    numbered: 3
     chapters:
     - file: content/IT/InformationSources
 

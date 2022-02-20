@@ -120,7 +120,7 @@ The first term $\frac{P(V | I)}{P(NV | I)}$ comes from our initial data and is e
 
 A quick search shows us that the vaccination rate around 17th October 2021 was around $P(V) = 29.4\%$, which means $P(NV) = 70.6\%$:
 
-![Vaccination status in Romania around 17th October 2021](images/2021-12-20-VaccinationStats.png "Vaccination status in Romania around 17th October 2021")
+![Vaccination status in Romania around 17th October 2021](images/BayesRuleVax_VaccinationStats.png "Vaccination status in Romania around 17th October 2021")
 
 We can now evaluate our result:
 

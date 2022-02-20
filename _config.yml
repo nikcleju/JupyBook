@@ -19,3 +19,14 @@ repository:
 launch_buttons:
   binderhub_url: "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)
   thebe        : true
+
+# Nic:
+# parse:
+#   myst_enable_extensions:
+#     # don't forget to list any other extensions you want enabled,
+#     # including those that are enabled by default!
+#     - amsmath
+
+sphinx:
+  extra_extensions:
+    - sphinx_proof
